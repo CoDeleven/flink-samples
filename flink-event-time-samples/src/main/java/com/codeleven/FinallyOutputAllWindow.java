@@ -46,7 +46,7 @@ public class FinallyOutputAllWindow {
         // 设置时间语义
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
-        String normalFilePath = WindowWithEventTime.class.getResource("/finally_output_all_window.txt").getPath();
+        String normalFilePath = FinallyOutputAllWindow.class.getResource("/finally_output_all_window.txt").getPath();
         // 单线程读取，一个个来
         DataStreamSource<String> dataStreamSource = env.readTextFile(normalFilePath).setParallelism(1);
 

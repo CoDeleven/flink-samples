@@ -52,7 +52,7 @@ public class WaterMarkIsBarrier {
         // 设置时间语义
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
-        String normalFilePath = WindowWithEventTime.class.getResource("/water_marker_is_barrier.txt").getPath();
+        String normalFilePath = WaterMarkIsBarrier.class.getResource("/water_marker_is_barrier.txt").getPath();
         // 单线程读取，一个个来
         DataStreamSource<String> dataStreamSource = env.readTextFile(normalFilePath).setParallelism(1);
 
