@@ -11,6 +11,7 @@
     <modules>
         <module>flink-event-time-samples</module>
         <module>flink-processing-time-samples</module>
+        <module>flink-processing-function-samples</module>
     </modules>
 
     <dependencies>

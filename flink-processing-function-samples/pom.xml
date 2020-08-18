@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>flink-processing-time-samples</artifactId>
+    <artifactId>flink-processing-samples</artifactId>
 
-    <name>flink-processing-time-samples</name>
+    <name>flink-processing-samples</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
