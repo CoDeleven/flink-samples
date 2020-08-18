@@ -18,6 +18,7 @@ import org.apache.flink.util.Collector;
  * 错误的ProcessFunction使用方式！
  * 错误在 对非KeyedStream 使用KeyedState和Timer机制
  * 它们底层不支持，具体源码已经在下方标出
+ *
  */
 public class WrongProcessingFunctionExample {
     public static void main(String[] args) throws Exception {
@@ -73,16 +74,9 @@ public class WrongProcessingFunctionExample {
 
         @Override
         public void processElement(Tuple3<String, Long, Integer> value, Context ctx, Collector<String> out) throws Exception {
-
-            if(value.f2 + 2 > temperature.value() && registerTime.value() != null){
-                long curTime = System.currentTimeMillis() + 2000;
-                // ERROR：ProcessOperator#registerProcessingTimeTimer()，不支持Timer
-                ctx.timerService().registerProcessingTimeTimer(curTime);
-                registerTime.update(curTime);
-            }else{
-                out.collect(value.toString());
-            }
-            temperature.update(value.f2);
+            // ERROR：ProcessOperator#registerProcessingTimeTimer()，不支持Timer
+            ctx.timerService().registerProcessingTimeTimer(value.f1);
+            registerTime.update(value.f1);
         }
 
     }
