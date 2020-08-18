@@ -28,9 +28,8 @@ public class WrongProcessingFunctionExample {
         // 设置时间语义。即使不设置，默认情况下也是ProcessingTime
         env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime);
 
-        String normalFilePath = WrongProcessingFunctionExample.class.getResource("/temperature_normal.txt").getPath();
-        // 请求一行行单线程读入
-        DataStreamSource<String> dataStreamSource = env.readTextFile(normalFilePath).setParallelism(1);
+        // windows上去下个nc命令，然后 nc.exe -L -p 7777
+        DataStreamSource<String> dataStreamSource = env.socketTextStream("localhost", 7777).setParallelism(1);
 
         // 拆分字符串，第一个是组，第二个是时间戳，第三个是值
         DataStream<Tuple3<String, Long, Integer>> tuple3DataStream = dataStreamSource.flatMap(new FlatMapFunction<String, Tuple3<String, Long, Integer>>() {

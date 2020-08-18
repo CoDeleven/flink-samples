@@ -1,0 +1,6 @@
+beijing,35
+beijing,35
+beijing,36
+beijing,34
+beijing,35
+beijing,37
