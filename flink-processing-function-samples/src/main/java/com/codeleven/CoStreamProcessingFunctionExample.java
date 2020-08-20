@@ -16,6 +16,14 @@ import org.apache.flink.streaming.api.functions.co.CoProcessFunction;
 import org.apache.flink.streaming.api.functions.co.KeyedCoProcessFunction;
 import org.apache.flink.util.Collector;
 
+/**
+ * 合并流的Function执行示例
+ * 前置条件：
+ * 1. temperature_normal1.txt
+ * 2. temperature_normal2.txt
+ *
+ * 主要做了数据流的合并，然后Process
+ */
 public class CoStreamProcessingFunctionExample {
     public static void main(String[] args) throws Exception {
         // 创建执行环境

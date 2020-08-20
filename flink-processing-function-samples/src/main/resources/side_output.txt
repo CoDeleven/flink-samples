@@ -1,0 +1,12 @@
+beijing,35
+hangzhou,34
+beijing,36
+hangzhou,37
+beijing,35
+hangzhou,35
+beijing,34
+hangzhou,37
+beijing,37
+hangzhou,38
+beijing,35
+hangzhou,32
