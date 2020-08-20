@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>flink-processing-samples</artifactId>
+    <artifactId>flink-processing-function-samples</artifactId>
 
     <name>flink-processing-samples</name>
     <!-- FIXME change it to the project's website -->
